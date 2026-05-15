@@ -1,8 +1,12 @@
-# 为什么 AI 产品不是换最强模型就完了
+---
+title: "Prompt Engineering 没死，它被重新归位了"
+subtitle: "从模型偏好到 Context Engineering 与 Harness Engineering"
+last_updated: 2026-05-07
+---
+
+# Prompt Engineering 没死，它被重新归位了
 
 ## 从模型偏好，到 Prompt / Context / Harness
-
-Last Updated: 2026-05-07
 
 前几天我在看一个现象：有些用户并不总是追最新、最强的模型。
 

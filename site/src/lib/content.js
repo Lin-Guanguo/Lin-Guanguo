@@ -75,7 +75,7 @@ function readArticle(month, filename) {
     parsed.data.title || firstHeading(parsed.content) || titleFromSlug(slug),
   );
   const subtitle = plainText(parsed.data.subtitle || firstSubtitle(parsed.content));
-  const lastUpdated = parsed.data.last_updated || extractLastUpdated(raw);
+  const lastUpdated = normalizeDate(parsed.data.last_updated) || extractLastUpdated(raw);
 
   return {
     slug,
@@ -107,6 +107,16 @@ function firstSubtitle(content) {
 
 function extractLastUpdated(raw) {
   return raw.match(/^Last Updated:\s*(\d{4}-\d{2}-\d{2})/m)?.[1] || "";
+}
+
+function normalizeDate(value) {
+  if (!value) return "";
+
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
+
+  return String(value);
 }
 
 function normalizeBody(content) {

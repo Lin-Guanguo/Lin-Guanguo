@@ -18,9 +18,33 @@ last_updated: YYYY-MM-DD
 
 Historical essays may rely on the site's compatibility heuristics.
 
+## 202512
+
+- [term-supervisor-ai-monitor-room.md](202512/term-supervisor-ai-monitor-room.md) — TermSupervisor：多个 AI 编程会话的监控室
+- [agent-foreman-long-running-agent-harness.md](202512/agent-foreman-long-running-agent-harness.md) — agent-foreman：长任务 Agent 的外部记忆
+- [ai-friendly-code-architecture.md](202512/ai-friendly-code-architecture.md) — AI-Friendly Code Architecture
+- [personal-knowledge-base-ai-records.md](202512/personal-knowledge-base-ai-records.md) — 个人知识库：让 AI 帮我记录工作
+
+## 202601
+
+- [llm-memory-systems-2025.md](202601/llm-memory-systems-2025.md) — LLM 记忆系统调研：2025 年技术全景与落地真相
+- [clawdbot-agent-network.md](202601/clawdbot-agent-network.md) — Clawdbot 与 Agent 网络：让 AI 自己配置自己
+
+## 202602
+
+- [claude-code-insights-reverse-engineering.md](202602/claude-code-insights-reverse-engineering.md) — Claude Code /insights 命令逆向分析
+- [claude-code-ops-debugging.md](202602/claude-code-ops-debugging.md) — Claude Code 做运维排查：一次远程断线定位
+- [ai-worklog-productivity-system.md](202602/ai-worklog-productivity-system.md) — AI 工作记录系统：开始记录后，我才知道 AI 提效多少
+
 ## 202603
 
+- [programmer-at-the-turning-point.md](202603/programmer-at-the-turning-point.md) — 时代交界的程序员
+- [ai-productivity-and-judgment.md](202603/ai-productivity-and-judgment.md) — 干得越快，人越累，守住你的判断力
+- [anthropic-engineering-blog-analysis.md](202603/anthropic-engineering-blog-analysis.md) — Anthropic Engineering Blog 文章全景分析
+- [ai-orchestrates-ai.md](202603/ai-orchestrates-ai.md) — 用 AI 协调多个 Claude Code 会话
 - [ai-economic-crisis-forecast.md](202603/ai-economic-crisis-forecast.md) — 一篇 AI 经济危机预测，我想反驳，但发现反驳不了多少
+- [ai-psychosis-before-cyberpsychosis.md](202603/ai-psychosis-before-cyberpsychosis.md) — AI Psychosis 与赛博精神病的联想
+- [long-running-agent-harness-design.md](202603/long-running-agent-harness-design.md) — Harness Design for Long-Running Apps
 - [python-type-system-discoveries.md](202603/python-type-system-discoveries.md) — 第一次写 Python 项目，一些发现
 - [ai-technical-debt.md](202603/ai-technical-debt.md) — AI 写代码很强，又微妙地不行
 - [agent-memory-context-comparison.md](202603/agent-memory-context-comparison.md) — 6 个主流 Agent 的上下文管理与记忆系统深度对比
@@ -36,5 +60,5 @@ Historical essays may rely on the site's compatibility heuristics.
 
 ## 202605
 
-- [ai-product-not-just-strongest-model.md](202605/ai-product-not-just-strongest-model.md) — 为什么 AI 产品不是换最强模型就完了
+- [ai-product-not-just-strongest-model.md](202605/ai-product-not-just-strongest-model.md) — Prompt Engineering 没死，它被重新归位了
 - [programming-beyond-oop.md](202605/programming-beyond-oop.md) — 理解编程的更多方式
