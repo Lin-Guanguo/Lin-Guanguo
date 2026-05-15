@@ -1,12 +1,14 @@
 ---
 import "../styles/global.css";
-import { getArticles, groupArticlesByMonth } from "../lib/content.js";
+import { getAboutPage, getArticles, groupArticlesByMonth } from "../lib/content.js";
 
+const about = getAboutPage();
 const groups = groupArticlesByMonth(getArticles());
 const articleCount = groups.reduce((sum, group) => sum + group.articles.length, 0);
 const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const aboutLead = about.summary;
 ---
 
 <!doctype html>
@@ -16,28 +18,42 @@ const base = import.meta.env.BASE_URL.endsWith("/")
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Public essays by Lin Guanguo, organized by publishing month."
+      content="Personal homepage and public writing archive for Lin Guanguo."
     />
-    <title>Essays · Lin Guanguo</title>
+    <title>Lin Guanguo / 林观果</title>
   </head>
   <body>
     <main class="home-shell">
-      <header class="site-header">
-        <p class="eyebrow">Lin Guanguo / 林观果</p>
-        <h1>Essays</h1>
-        <p class="intro">
-          Public essays and notes that have already been shared elsewhere,
-          collected here as a readable archive.
-        </p>
+      <header class="site-header profile-header">
+        <p class="eyebrow">AI Agent / Backend Systems Engineer</p>
+        <h1>Lin Guanguo / 林观果</h1>
         <div class="meta-row">
-          <span>{articleCount} essays</span>
-          <span>{groups.length} months</span>
+          <span>Shanghai</span>
+          <a href="mailto:lin.guanguo@foxmail.com">lin.guanguo@foxmail.com</a>
           <a href="https://github.com/Lin-Guanguo">GitHub</a>
-          <a href={`${base}source/README.md`}>Markdown index</a>
+          <a href={`${base}about/`}>About Me</a>
         </div>
       </header>
 
-      <section class="timeline-list" aria-label="Essay timeline">
+      <section class="profile-brief" aria-labelledby="about-heading">
+        <div>
+          <p class="section-label">Profile</p>
+          <h2 id="about-heading">
+            <a class="section-title-link" href={`${base}about/`}>About Me</a>
+          </h2>
+        </div>
+        <div class="profile-brief-body">
+          {aboutLead.map((paragraph) => <p>{paragraph}</p>)}
+          <a class="section-link" href={`${base}about/`}>Read full profile</a>
+        </div>
+      </section>
+
+      <section class="timeline-list" aria-label="Writing archive">
+        <div class="section-heading">
+          <p class="section-label">Writing Archive</p>
+          <h2>Essays by month</h2>
+          <p>{articleCount} essays across {groups.length} months.</p>
+        </div>
         {
           groups.map((group) => (
             <section class="month-section">

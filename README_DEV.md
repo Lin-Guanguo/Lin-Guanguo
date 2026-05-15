@@ -7,6 +7,7 @@ This repository is the source of truth for the public GitHub profile and the pub
 ## Structure
 
 - `README.md`: public GitHub profile README. Keep it short and reader-facing.
+- `profile/`: public profile materials rendered by the personal site.
 - `essays/`: source Markdown for public, sanitized essays.
 - `site/`: Astro static site that renders `essays/` into readable pages.
 - `.github/workflows/deploy.yml`: GitHub Pages deployment workflow.
@@ -58,7 +59,9 @@ npm run build
 Astro builds a static site. During build:
 
 - `site/src/lib/content.js` reads source essays from the root `essays/` directory.
+- `site/src/lib/content.js` reads the public About Me source from `profile/about-me.md`.
 - `site/src/pages/index.astro` generates the homepage.
+- `site/src/pages/about.astro` generates the public About Me page.
 - `site/src/pages/read/[month]/[slug].astro` generates one reader page per essay.
 - `site/scripts/sync-public-essays.mjs` copies `essays/` into `site/public/source/` so raw Markdown files are available online.
 

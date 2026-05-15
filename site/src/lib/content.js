@@ -5,6 +5,7 @@ import { marked } from "marked";
 
 const repoRoot = path.resolve(process.cwd(), "..");
 const essaysRoot = path.join(repoRoot, "essays");
+const profileRoot = path.join(repoRoot, "profile");
 
 marked.use({
   gfm: true,
@@ -60,6 +61,21 @@ export function groupArticlesByMonth(articles) {
   }
 
   return Array.from(groups.values());
+}
+
+export function getAboutPage() {
+  const absolutePath = path.join(profileRoot, "about-me.md");
+  const raw = fs.readFileSync(absolutePath, "utf8");
+  const parsed = matter(raw);
+  const body = normalizeBody(parsed.content);
+
+  return {
+    title: plainText(parsed.data.title || firstHeading(parsed.content) || "About"),
+    lastUpdated: normalizeDate(parsed.data.last_updated) || extractLastUpdated(raw),
+    summary: firstProfileParagraphs(body, 4).map(plainText),
+    sourcePath: "/profile/about-me.md",
+    html: marked.parse(body),
+  };
 }
 
 function readArticle(month, filename) {
@@ -170,6 +186,15 @@ function plainText(value = "") {
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function firstProfileParagraphs(content, count) {
+  return content
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter((paragraph) => paragraph && !paragraph.startsWith("#"))
+    .filter((paragraph) => !paragraph.includes("mailto:"))
+    .slice(0, count);
 }
 
 function titleFromSlug(slug) {

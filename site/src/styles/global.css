@@ -39,8 +39,12 @@ a {
 }
 
 .site-header {
-  padding: 64px 0 36px;
+  padding: 56px 0 34px;
   border-bottom: 1px solid var(--line);
+}
+
+.profile-header {
+  padding-bottom: 32px;
 }
 
 .reader-shell {
@@ -126,8 +130,76 @@ h1 {
   text-decoration: underline;
 }
 
+.profile-brief {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-brief h2,
+.section-heading h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.profile-brief-body {
+  max-width: 760px;
+}
+
+.profile-brief-body p {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.profile-brief-body p:last-of-type {
+  margin-bottom: 0;
+}
+
+.section-title-link {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.section-title-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.section-label {
+  margin: 0 0 10px;
+  color: var(--accent-2);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.section-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--link);
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.section-heading {
+  padding: 30px 0 8px;
+}
+
+.section-heading p:last-child {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .timeline-list {
-  padding: 28px 0 72px;
+  padding: 0 0 72px;
 }
 
 .month-section {
@@ -332,6 +404,11 @@ h1 {
   .month-section {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  .profile-brief {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .intro,
