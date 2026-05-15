@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import { getArticles, groupArticlesByMonth } from "../lib/content.js";
+
+const groups = groupArticlesByMonth(getArticles());
+const articleCount = groups.reduce((sum, group) => sum + group.articles.length, 0);
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Public essays by Lin Guanguo, organized by publishing month."
+    />
+    <title>Essays · Lin Guanguo</title>
+  </head>
+  <body>
+    <main class="home-shell">
+      <header class="site-header">
+        <p class="eyebrow">Lin Guanguo / 林观果</p>
+        <h1>Essays</h1>
+        <p class="intro">
+          Public essays and notes that have already been shared elsewhere,
+          collected here as a readable archive.
+        </p>
+        <div class="meta-row">
+          <span>{articleCount} essays</span>
+          <span>{groups.length} months</span>
+          <a href="https://github.com/Lin-Guanguo">GitHub</a>
+          <a href={`${base}source/README.md`}>Markdown index</a>
+        </div>
+      </header>
+
+      <section class="timeline-list" aria-label="Essay timeline">
+        {
+          groups.map((group) => (
+            <section class="month-section">
+              <div class="month-heading">
+                <h2>{group.label}</h2>
+                <span>{group.month}</span>
+              </div>
+              <ol class="article-list">
+                {group.articles.map((article) => (
+                  <li>
+                    <a href={`${base}read/${article.month}/${article.slug}/`}>
+                      <span class="article-title">{article.title}</span>
+                      {article.subtitle && (
+                        <span class="article-subtitle">{article.subtitle}</span>
+                      )}
+                      <span class="article-meta">
+                        {article.lastUpdated
+                          ? article.lastUpdated
+                          : `Archived ${article.monthLabel}`}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))
+        }
+      </section>
+    </main>
+  </body>
+</html>
