@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Favicon from "../components/Favicon.astro";
 import { getAboutPage } from "../lib/content.js";
 
 const about = getAboutPage();
@@ -17,6 +18,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       name="description"
       content="Public About Me profile for Lin Guanguo."
     />
+    <Favicon />
     <title>About · Lin Guanguo</title>
   </head>
   <body>

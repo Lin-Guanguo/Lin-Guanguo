@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Favicon from "../components/Favicon.astro";
 import { getAboutPage, getArticles, groupArticlesByMonth } from "../lib/content.js";
 
 const about = getAboutPage();
@@ -20,6 +21,7 @@ const aboutLead = about.summary;
       name="description"
       content="Personal homepage and public writing archive for Lin Guanguo."
     />
+    <Favicon />
     <title>Lin Guanguo / 林观果</title>
   </head>
   <body>
