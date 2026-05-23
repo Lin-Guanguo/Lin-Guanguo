@@ -1,6 +1,6 @@
 # Essays
 
-Last Updated: 2026-05-18
+Last Updated: 2026-05-23
 
 Essays are grouped by writing or publishing month. File names use readable English slugs instead of internal draft names such as `blog.1`.
 
@@ -60,6 +60,7 @@ Historical essays may rely on the site's compatibility heuristics.
 
 ## 202605
 
+- [team-ai-native-progress.md](202605/team-ai-native-progress.md) — 团队 AI Native 建设真实进展分享
 - [ai-software-engineering-system-responsibility.md](202605/ai-software-engineering-system-responsibility.md) — AI 时代的软件工程：从执行能力到系统责任
 - [ai-product-not-just-strongest-model.md](202605/ai-product-not-just-strongest-model.md) — Prompt Engineering 没死，它被重新归位了
 - [programming-beyond-oop.md](202605/programming-beyond-oop.md) — 理解编程的更多方式
