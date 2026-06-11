@@ -47,6 +47,10 @@ a {
   padding-bottom: 32px;
 }
 
+.profile-header .meta-row {
+  font-size: 16px;
+}
+
 .reader-shell {
   max-width: 820px;
   padding-bottom: 72px;
