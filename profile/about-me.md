@@ -3,7 +3,7 @@ Last Updated: 2026-05-15
 # 林观果
 
 AI Agent / 后端系统工程师  
-上海 · [lin.guanguo@foxmail.com](mailto:lin.guanguo@foxmail.com) · [个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)
+上海 · [lin.guanguo2000@gmail.com](mailto:lin.guanguo2000@gmail.com) · [个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)
 
 我是一名从用户画像平台后端转向生产级 AI Agent 系统的工程师。早期在字节跳动建设用户画像平台，主要投入千万级 QPS 的在线画像查询系统，也参与离线圈选能力建设；在线系统面向极高并发、低延迟的画像查询场景，是大规模数据系统在线化的核心链路之一。现在在一家 AI 初创公司负责 C 端创作生图产品的 Agent 系统建设。
 
