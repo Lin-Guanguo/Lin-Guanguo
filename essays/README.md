@@ -1,6 +1,6 @@
 # Essays
 
-Last Updated: 2026-06-11
+Last Updated: 2026-06-16
 
 Essays are grouped by writing or publishing month. File names use readable English slugs instead of internal draft names such as `blog.1`.
 
@@ -68,3 +68,4 @@ Historical essays may rely on the site's compatibility heuristics.
 ## 202606
 
 - [agent-engineering-core-loop.md](202606/agent-engineering-core-loop.md) — 从工程实践上理解 Agent，核心很简单
+- [the-new-loop-in-ai-agents.md](202606/the-new-loop-in-ai-agents.md) — Agent 领域的新"Loop"热潮（又是哪来的词）
