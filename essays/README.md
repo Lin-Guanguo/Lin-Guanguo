@@ -69,3 +69,7 @@ Historical essays may rely on the site's compatibility heuristics.
 
 - [agent-engineering-core-loop.md](202606/agent-engineering-core-loop.md) — 从工程实践上理解 Agent，核心很简单
 - [the-new-loop-in-ai-agents.md](202606/the-new-loop-in-ai-agents.md) — Agent 领域的新"Loop"热潮（又是哪来的词）
+
+## 202607
+
+- [model-vendors-agent-orchestration.md](202607/model-vendors-agent-orchestration.md) — 模型厂商亲自下场做 Agent 编排
