@@ -1,6 +1,6 @@
 # Essays
 
-Last Updated: 2026-07-27
+Last Updated: 2026-07-31
 
 Essays are grouped by writing or publishing month. File names use readable English slugs instead of internal draft names such as `blog.1`.
 
@@ -74,3 +74,4 @@ Historical essays may rely on the site's compatibility heuristics.
 
 - [model-vendors-agent-orchestration.md](202607/model-vendors-agent-orchestration.md) — 模型厂商亲自下场做 Agent 编排
 - [production-agent-engineering-beyond-vibe-coding.md](202607/production-agent-engineering-beyond-vibe-coding.md) — 从模型调用到生产级 Agent：Vibe Coding 之外的工程实践
+- [agent-tool-design-code-as-tool-use.md](202607/agent-tool-design-code-as-tool-use.md) — 主流 Agent 的 Tool 设计
