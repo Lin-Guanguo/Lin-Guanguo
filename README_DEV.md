@@ -1,6 +1,6 @@
 # Repository Maintenance
 
-Last Updated: 2026-05-15
+Last Updated: 2026-08-25
 
 This repository is the source of truth for the public GitHub profile and the public personal site.
 
@@ -44,7 +44,7 @@ npm run dev -- --port 4321
 The local site is served at:
 
 ```text
-http://127.0.0.1:4321/Lin-Guanguo/
+http://127.0.0.1:4321/
 ```
 
 Before pushing site changes, run:
@@ -75,7 +75,14 @@ Pushing to `main` triggers GitHub Actions and deploys the site to:
 https://lin-guanguo.github.io/Lin-Guanguo/
 ```
 
-The Astro base path is configured as `/Lin-Guanguo` in `site/astro.config.mjs`. Keep this in sync with the repository name unless a custom domain is added.
+Deployments use the domain root by default. GitHub Actions automatically derives the GitHub Pages base path from `GITHUB_REPOSITORY`, so the repository can also deploy unchanged to root-hosted platforms such as EdgeOne Pages.
+
+Two optional environment variables are available when a deployment needs explicit URL settings:
+
+- `DOMAIN`: canonical domain used by Astro for SEO-oriented absolute URLs. The `https://` scheme is added when omitted.
+- `BASE_PATH`: path prefix for a platform that serves the site below its domain root.
+
+Neither variable is required for the current GitHub Pages or EdgeOne Pages deployments. See `site/.env.example` for examples.
 
 ## Ignore Rules
 
