@@ -16,6 +16,8 @@ test("reads the public about page from the profile source", () => {
   assert.match(about.html, /Agent Runtime \/ AI 系统工程师/);
   assert.match(about.html, /Plan-and-Execute 与 ReAct/);
   assert.match(about.html, /技术关注/);
+  assert.match(about.html, /href="\.\.\/"/);
+  assert.doesNotMatch(about.html, /lin-guanguo\.github\.io/);
 });
 
 test("homepage does not include the old English intro sentence", () => {

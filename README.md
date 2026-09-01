@@ -11,4 +11,5 @@ I am a software engineer who likes understanding systems deeply, from AI agents 
 
 ## Personal Homepage
 
-- [lin-guanguo.github.io/Lin-Guanguo](https://lin-guanguo.github.io/Lin-Guanguo/)
+- GitHub Pages: [lin-guanguo.github.io/Lin-Guanguo](https://lin-guanguo.github.io/Lin-Guanguo/)
+- Mainland-friendly mirror: [me.linguanguo.top](https://me.linguanguo.top/)

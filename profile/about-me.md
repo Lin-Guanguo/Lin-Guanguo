@@ -3,7 +3,7 @@ Last Updated: 2026-09-01
 # 林观果
 
 Agent Runtime / AI 系统工程师<br>
-上海 · [lin.guanguo2000@gmail.com](mailto:lin.guanguo2000@gmail.com) · [GitHub](https://github.com/Lin-Guanguo) · [个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)
+上海 · [lin.guanguo2000@gmail.com](mailto:lin.guanguo2000@gmail.com) · [GitHub](https://github.com/Lin-Guanguo) · [个人主页](../)
 
 我是一名从大规模用户画像平台后端走向生产级 Agent Runtime 的工程师。现在在一家 AI 初创公司负责 C 端多模态创作产品的 Agent 系统建设，先后从 0 到 1 建设并上线 Plan-and-Execute 与 ReAct 两套 Agent Runtime。
 
@@ -73,8 +73,8 @@ Agent Runtime / AI 系统工程师<br>
 
 我持续记录 Agent 架构、Memory 与 Context、编程语言和生产工程实践，已公开 34 篇文章。近期代表作包括：
 
-- [《从模型调用到生产级 Agent：Vibe Coding 之外的工程实践》](https://lin-guanguo.github.io/Lin-Guanguo/read/202607/production-agent-engineering-beyond-vibe-coding/)
-- [《主流 Agent 的 Tool 设计》](https://lin-guanguo.github.io/Lin-Guanguo/read/202607/agent-tool-design-code-as-tool-use/)
-- [《6 个主流 Agent 的上下文管理与记忆系统深度对比》](https://lin-guanguo.github.io/Lin-Guanguo/read/202603/agent-memory-context-comparison/)
+- [《从模型调用到生产级 Agent：Vibe Coding 之外的工程实践》](../read/202607/production-agent-engineering-beyond-vibe-coding/)
+- [《主流 Agent 的 Tool 设计》](../read/202607/agent-tool-design-code-as-tool-use/)
+- [《6 个主流 Agent 的上下文管理与记忆系统深度对比》](../read/202603/agent-memory-context-comparison/)
 
-完整文章与后续更新见[个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)。
+完整文章与后续更新见[个人主页](../)。
