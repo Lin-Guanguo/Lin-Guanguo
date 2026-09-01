@@ -72,7 +72,7 @@ export function getAboutPage() {
   return {
     title: plainText(parsed.data.title || firstHeading(parsed.content) || "About"),
     lastUpdated: normalizeDate(parsed.data.last_updated) || extractLastUpdated(raw),
-    summary: firstProfileParagraphs(body, 4).map(plainText),
+    summary: profileIntroductionParagraphs(body).map(plainText),
     sourcePath: "/profile/about-me.md",
     html: marked.parse(body),
   };
@@ -188,13 +188,16 @@ function plainText(value = "") {
     .trim();
 }
 
-function firstProfileParagraphs(content, count) {
-  return content
+function profileIntroductionParagraphs(content) {
+  const firstSectionHeading = content.search(/^#{2,6}\s+/m);
+  const introduction =
+    firstSectionHeading === -1 ? content : content.slice(0, firstSectionHeading);
+
+  return introduction
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.trim())
     .filter((paragraph) => paragraph && !paragraph.startsWith("#"))
-    .filter((paragraph) => !paragraph.includes("mailto:"))
-    .slice(0, count);
+    .filter((paragraph) => !paragraph.includes("mailto:"));
 }
 
 function titleFromSlug(slug) {

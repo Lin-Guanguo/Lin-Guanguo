@@ -9,12 +9,13 @@ test("reads the public about page from the profile source", () => {
   const about = content.getAboutPage();
 
   assert.equal(about.title, "林观果");
-  assert.equal(about.lastUpdated, "2026-05-15");
-  assert.equal(about.summary.length, 4);
+  assert.equal(about.lastUpdated, "2026-09-01");
   assert.match(about.summary[0], /^我是一名/);
-  assert.match(about.summary[3], /构建稳定复杂系统的能力仍然稀缺/);
-  assert.match(about.html, /AI Agent \/ 后端系统工程师/);
-  assert.match(about.html, /技术底色/);
+  assert.match(about.summary.at(-1), /如何让边界重新变得清晰/);
+  assert.doesNotMatch(about.summary.join("\n"), /负责 C 端创作生图 APP/);
+  assert.match(about.html, /Agent Runtime \/ AI 系统工程师/);
+  assert.match(about.html, /Plan-and-Execute 与 ReAct/);
+  assert.match(about.html, /技术关注/);
 });
 
 test("homepage does not include the old English intro sentence", () => {

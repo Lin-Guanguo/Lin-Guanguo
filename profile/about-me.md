@@ -1,52 +1,80 @@
-Last Updated: 2026-05-15
+Last Updated: 2026-09-01
 
 # 林观果
 
-AI Agent / 后端系统工程师  
-上海 · [lin.guanguo2000@gmail.com](mailto:lin.guanguo2000@gmail.com) · [个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)
+Agent Runtime / AI 系统工程师<br>
+上海 · [lin.guanguo2000@gmail.com](mailto:lin.guanguo2000@gmail.com) · [GitHub](https://github.com/Lin-Guanguo) · [个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)
 
-我是一名从用户画像平台后端转向生产级 AI Agent 系统的工程师。早期在字节跳动建设用户画像平台，主要投入千万级 QPS 的在线画像查询系统，也参与离线圈选能力建设；在线系统面向极高并发、低延迟的画像查询场景，是大规模数据系统在线化的核心链路之一。现在在一家 AI 初创公司负责 C 端创作生图产品的 Agent 系统建设。
+我是一名从大规模用户画像平台后端走向生产级 Agent Runtime 的工程师。现在在一家 AI 初创公司负责 C 端多模态创作产品的 Agent 系统建设，先后从 0 到 1 建设并上线 Plan-and-Execute 与 ReAct 两套 Agent Runtime。
 
-当前工作主要围绕生产级 Agent 系统展开，包括 Agent runtime、Memory 和团队 AI native 工具链建设。我关心模型能力如何进入生产 C 端系统，并在线上服务中长期稳定运行、持续迭代。
+我长期关注模型能力如何在真实产品中稳定兑现。相比展示一次成功的模型调用，我更关心系统能否在长任务、多轮编辑、Tool 副作用和外部 Provider 波动下持续运行；其中涉及运行边界、反馈闭环、可观测、对账与故障恢复，也是我希望长期积累的核心能力。
 
-近期技术关注更多放在 Agent 系统、Memory 与 Context；同时长期保持对计算机系统和编程语言抽象的兴趣，包括操作系统、编译原理、算法、类型化状态、effect、资源生命周期和错误语义等方向。
+此前在字节跳动从事用户画像平台后端研发，后期核心负责数千万至近亿级 QPS 的在线查询服务，也建设过权限系统、开放平台与跨区域数据链路。领域从高并发后端转向 Agent Runtime，但处理稳定接口、清晰状态、延迟、成本和失败恢复的工程主线没有改变。
 
-我相信基础能力会越来越容易获得，但构建稳定复杂系统的能力仍然稀缺：判断边界、设计反馈闭环、建设可观测与恢复机制，并让系统能在真实线上环境中持续演进。这是我希望长期积累的核心能力。
+除了 Agent 系统，我也长期关注计算机系统与编程语言，包括操作系统、编译原理、类型化状态、effect、资源生命周期和错误语义。我倾向于从这些基础问题出发，理解复杂系统为什么失控，以及如何让边界重新变得清晰。
 
-## 经历
+## 工作经历
 
-### AI 初创公司｜Agent 系统｜2025.11 至今
+### AI 初创公司｜Agent 研发工程师｜2025.11 至今
 
-负责 C 端创作生图 APP 的 Agent 系统建设，核心工作包括：
+- 从 0 到 1 建设并上线 Plan-and-Execute 与 ReAct 两套面向 C 端多模态创作业务的 Agent Runtime。
+- 设计并全量上线 Agent Memory，提升 Planner 对 LLM KV Cache 的利用率，并搭建 Trace、Replay、Metrics 与自动排障工具链。
 
-- **Agent 系统建设**：从 0 开发 Agent 系统，覆盖 Planner、执行图、状态管理、checkpoint、rollback、cancel 和多轮编辑链路，补齐日志、指标、链路观测、问题归因与恢复能力，在生产 UGC 场景对灵活性与稳定性的双重要求下，降低异常 case 并提升首次生成成功率。
-- **Memory 系统**：设计并落地长期记忆能力，围绕用户历史项目提取事实、偏好和项目上下文，并接入 Planner 与执行链路。
-- **模型调用稳定性**：负责多模型接入、限流降级、任务队列、错误归因和调用链路观测，提升 Agent 系统对模型波动和线上异常的承载能力。
-- **团队 AI native 建设**：开发团队基础设施查询系统，将数据存储与查询能力封装为 Skill，并配套查询文档和 Skill 使用文档；同时沉淀项目启动与自主开发流程，使非技术同学可通过 Cursor 等 AI 工具完成自助查询、需求探索和早期验证，部分 Agent 需求在早期无需研发介入。
-- **工程实践补充**：参与 TTS、Prompt 评测平台等多模态创作链路建设，补齐 Agent、模型调用、评测和业务交付之间的工程闭环。
+### 字节跳动｜用户画像平台后端工程师｜2022–2025
 
-### 字节跳动｜用户画像系统｜2022.05 - 2025.11
+- 从后端实习转为正式员工，后期核心负责数千万至近亿级 QPS 在线查询服务的容量、缓存、稳定性与可观测性治理。
+- 建设 CDP 权限体系、开放平台与跨区域数据链路，支持多租户授权、多语言 SDK 接入及亚太、北美和欧洲的多区域数据同步。
 
-在用户画像平台做后端工程，主要围绕画像查询与圈选系统：
+## 核心项目
 
-- **在线查询服务**：主要负责千万级 QPS 画像查询后台建设，支持离线画像数据在线化查询，覆盖低延迟查询和稳定性治理。
-- **圈选与数据在线化**：负责画像增量架构、圈选查询、多引擎适配、跨区域同步和数据一致性相关建设。
-- **计费与成本治理**：推进内部数据产品的计费、成本分摊、存储优化和平台经营指标建设。
-- **权限与开放平台**：建设权限服务、开放平台 API、多语言 SDK 和 ToB 业务系统维护能力。
-- **工程管理与沉淀**：承担 Scrum Master、交付协调、风险跟踪、文档沉淀和离职交接体系整理。
+### 1. Plan-and-Execute Agent Runtime｜2026.03–2026.07
 
-这段经历构成了我做 Agent 系统的工程底座：稳定接口、清晰状态、可回放链路、可观测日志、成本意识、失败恢复，以及长期维护复杂系统的经验。
+面向原有工作流在状态表达、故障恢复和扩展性上的缺口，建设并全量上线完整执行底座：
 
-## 技术底色
+- 统一 LLM Planner、Plan Validator、类型化 Capability I/O 与执行图，支持异步 Run、多轮 replanning、并行汇聚和增量编辑。
+- 建设 PostgreSQL checkpoint、soft / hard cancel、跨集群 signal channel、CAS 与轮次级 rollback / resume，通过故障注入和恢复门禁验证业务状态能否安全恢复。
+- 建设事件总线、Prometheus Metrics 与结构化运行上下文；完成两轮 100 / 150-case 批量验证、生产 A/B 与全量发布，承载生成中的打断、修改、回退与断点恢复。
+- 通过稳定 Planner Prompt 前缀提升 LLM Provider KV Cache 利用率；两周生产窗口内 hit rate 从 11.37% 提升至 54.79%，独立模型估算 planning LLM 成本占比下降约 31.2%。
 
-- **画像查询与后端系统**：有千万级 QPS 在线查询、离线数据在线化、高效圈选、跨区域同步、成本治理和可观测性经验；习惯从接口、状态、延迟、成本和故障恢复角度看系统。
-- **Agent 与 LLM 应用工程**：关注 Planner、Memory、Context、checkpoint、cancel、评测和可观测性等运行时问题；能把 prompt / 模型问题拆解成状态管理、模型调用、验证器、fallback 和链路观测问题。
-- **计算机系统基础**：系统学习过 CSAPP、操作系统基础和经典算法教材；理解缓存、并发、I/O、序列化、调度和资源隔离等底层约束对业务系统的影响。
-- **编程语言与抽象能力**：写过覆盖继承、多态和 LLVM IR 生成的 C++ 编译器项目，也做过 Rust 异步 RPC 和 Lua 协程库；工作中受 Scala 与函数式编程影响较深，关注 ADT、类型化状态、effect、资源生命周期和错误语义等抽象如何帮助复杂系统保持清晰边界。
-- **工程工具化**：倾向于把高频查询、调试、实验复现和工作记录沉淀成工具、文档或 Skill，降低团队协作中的隐性成本。
+### 2. ReAct Runtime + Versioned Artifact System｜2026.08 至今
+
+面向不适合固化为固定 Workflow 的开放创作任务，建设并上线独立 ReAct Agent 服务：
+
+- 基于前置架构调研选择 Pi AgentHarness、single-controller ReAct 与 Skill：模型负责语义判断，Runtime 负责身份、状态、权限、副作用与恢复事实。
+- 设计 grammar-constrained Code Mode，使模型通过单一执行入口编排类型化工具；阶段内支持有界并发，阶段间重新读取事实并决策。
+- 建设版本化 Artifact 系统，以稳定身份、不可变版本、当前选择、归属和 lineage 管理多轮产物的来源、演进与最终集合。
+- 构建 capability-scoped Code Mode 与 Project-scoped 虚拟命令 Worker，通过受限命令、VFS、只读 Skill mount 与 staged write 控制路径、资源和副作用边界。
+- 围绕长任务与多实例执行建设单写语义、lease、heartbeat、drain、失败收敛和 query-before-retry，使系统能对运行归属与外部副作用进行判断。
+
+### 3. 用户画像在线高速查询服务｜字节跳动｜2022–2025
+
+- 后期核心负责多租户用户画像在线查询服务，覆盖容量、缓存、监控、Oncall 与稳定性治理，生产规模达到数千万至近亿级 QPS。
+- 一组 2025 年生产峰值快照中，单条主路径达到约 6,583 万 QPS，P99 约 4.9–8.8 ms，并与其他区域和集群共同承载多区域查询流量。
+- 开发分群增量导入链路，移除版本号依赖并降低存储与写入压力；上线后，凌晨导入高峰期的查询耗时波动基本消失。
+
+### 4. 用户画像 CDP 平台建设｜字节跳动｜2023–2025
+
+围绕多租户用户画像平台的权限、开放接入和多区域数据在线化，建设关键平台能力：
+
+- 建设权限体系，完成权限物化、项目中心重构与资源类型扩展；补齐初始化检测与存量权限治理，满足复杂授权和审计要求。
+- 搭建 OpenAPI 注册系统与上下游 Adapter，开发维护 Java、Python、Go SDK，使分群和元数据接口演进对调用方保持兼容。
+- 设计并落地覆盖亚太、北美和欧洲的在线数据与元数据同步链路，推进 CDP 核心能力整合与多区域部署。
+- 作为平台治理补充，建设四种计费模式、账单与成本分摊体系；通过容量校准推动在线商品收入提升 48.63%，存储容量治理使日均成本下降约 77.8%。
+
+## 技术关注
+
+- **Agent Runtime Reliability**：Agent Loop、状态与副作用边界、长任务执行、checkpoint、cancel / rollback / resume、并发控制、恢复与评测。
+- **Tool Interface 与执行环境**：面向 Agent 的工具契约、Code Mode、Skill、受限执行环境、资源生命周期和可审计副作用。
+- **后端与数据系统**：高并发低延迟服务、多租户权限、跨区域同步、缓存、消息系统、数据在线化与可观测性。
+- **编程模型与系统基础**：类型化状态、effect、错误语义、编译器、操作系统，以及这些抽象如何帮助复杂系统维持清晰边界。
+- **工程工具化**：倾向于把高频查询、调试、实验复现和工作记录沉淀为工具、文档或 Skill，降低长期维护与团队协作中的隐性成本。
 
 ## 写作与公开产出
 
-我在个人主页持续写作，主题主要围绕 Agent 架构、Memory 与 Context、编程语言、个人工作系统等方向。
+我持续记录 Agent 架构、Memory 与 Context、编程语言和生产工程实践，已公开 34 篇文章。近期代表作包括：
 
-个人主页：[https://lin-guanguo.github.io/Lin-Guanguo/](https://lin-guanguo.github.io/Lin-Guanguo/)
+- [《从模型调用到生产级 Agent：Vibe Coding 之外的工程实践》](https://lin-guanguo.github.io/Lin-Guanguo/read/202607/production-agent-engineering-beyond-vibe-coding/)
+- [《主流 Agent 的 Tool 设计》](https://lin-guanguo.github.io/Lin-Guanguo/read/202607/agent-tool-design-code-as-tool-use/)
+- [《6 个主流 Agent 的上下文管理与记忆系统深度对比》](https://lin-guanguo.github.io/Lin-Guanguo/read/202603/agent-memory-context-comparison/)
+
+完整文章与后续更新见[个人主页](https://lin-guanguo.github.io/Lin-Guanguo/)。
