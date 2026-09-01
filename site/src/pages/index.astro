@@ -30,22 +30,20 @@ const aboutLead = about.summary;
     </header>
 
     <section class="profile-brief" aria-labelledby="about-heading">
-      <div>
-        <p class="section-label">Profile</p>
+      <div class="profile-brief-title">
         <h2 id="about-heading">
           <a class="section-title-link" href={`${base}about/`}>About Me</a>
         </h2>
+        <a class="section-link" href={`${base}about/`}>Full profile</a>
       </div>
       <div class="profile-brief-body">
         {aboutLead.map((paragraph) => <p>{paragraph}</p>)}
-        <a class="section-link" href={`${base}about/`}>Read full profile</a>
       </div>
     </section>
 
     <section class="timeline-list" aria-label="Writing archive">
       <div class="section-heading">
-        <p class="section-label">Writing Archive</p>
-        <h2>Essays by month</h2>
+        <h2>Essays</h2>
         <p>{articleCount} essays across {groups.length} months.</p>
       </div>
       {

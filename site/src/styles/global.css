@@ -136,8 +136,8 @@ h1 {
 
 .profile-brief {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   padding: 34px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -149,8 +149,15 @@ h1 {
   line-height: 1.25;
 }
 
-.profile-brief-body {
-  max-width: 760px;
+.profile-brief-title {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.profile-brief-title .section-link {
+  margin-top: 0;
+  font-size: 14px;
 }
 
 .profile-brief-body p {
@@ -172,15 +179,6 @@ h1 {
 .section-title-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-
-.section-label {
-  margin: 0 0 10px;
-  color: var(--accent-2);
-  font-size: 12px;
-  font-weight: 760;
-  letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 .section-link {
@@ -408,11 +406,6 @@ h1 {
   .month-section {
     grid-template-columns: 1fr;
     gap: 18px;
-  }
-
-  .profile-brief {
-    grid-template-columns: 1fr;
-    gap: 14px;
   }
 
   .intro,
