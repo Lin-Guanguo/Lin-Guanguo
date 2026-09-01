@@ -32,6 +32,25 @@ a {
   color: inherit;
 }
 
+.site-footer {
+  width: min(100% - 32px, 980px);
+  margin: 0 auto;
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 .home-shell,
 .reader-shell {
   width: min(100% - 32px, 980px);

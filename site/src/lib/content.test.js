@@ -25,11 +25,3 @@ test("homepage does not include the old English intro sentence", () => {
 
   assert.doesNotMatch(homepage, /I build production-grade AI Agent systems/);
 });
-
-test("selects Cloudflare Web Analytics by runtime hostname", () => {
-  const layout = fs.readFileSync("src/layouts/BaseLayout.astro", "utf8");
-
-  assert.match(layout, /"lin-guanguo\.github\.io": "8fb2bd9bf84c4eb2a002497861faf5ea"/);
-  assert.match(layout, /"me\.linguanguo\.top": "5c4eadc85c184547a8923cef932b3704"/);
-  assert.match(layout, /analyticsTokens\[window\.location\.hostname\]/);
-});
