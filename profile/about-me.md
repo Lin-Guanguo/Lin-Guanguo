@@ -5,9 +5,9 @@ Last Updated: 2026-09-21
 Agent Runtime / AI 系统工程师<br>
 上海 · [lin.guanguo2000@gmail.com](mailto:lin.guanguo2000@gmail.com) · [GitHub](https://github.com/Lin-Guanguo) · [个人主页](../)
 
-我是一名从大规模用户画像平台后端走向生产级 Agent Runtime 的工程师。现在在一家 AI 初创公司负责 C 端多模态创作产品的 Agent 系统建设，先后从 0 到 1 建设并上线 Plan-and-Execute 与 ReAct 两套 Agent Runtime。
+我是一名从大规模用户画像平台后端走向生产级 Agent Runtime 的工程师。现在在一家 AI 初创公司从 0 到 1 建设面向 C 端多模态创作业务的 Agent Runtime，先后落地并上线 Plan-and-Execute 与 ReAct 两套执行架构。
 
-我长期关注模型能力如何在真实产品中稳定兑现。相比展示一次成功的模型调用，我更关心系统能否在长任务、多轮编辑、Tool 副作用和外部 Provider 波动下持续运行；我重点解决长任务、状态与产物版本、工具副作用、故障恢复和可观测性问题。
+我长期关注模型能力如何在真实产品中稳定兑现；相比展示一次成功的模型调用，我更关心系统能否在长任务、多轮编辑、Tool 副作用和外部 Provider 波动下持续运行，重点解决状态与产物版本、故障恢复和可观测性问题。
 
 此前在字节跳动从事用户画像平台后端研发，使用 Go 开发高并发低延迟在线服务，使用 Scala / Java 17 开发业务与平台服务，并参与 Spark / Flink 数据任务；后期核心负责数千万至近亿级 QPS 的在线查询服务，也建设过权限系统、开放平台与跨区域数据链路。领域从高并发后端转向 Agent Runtime，但处理稳定接口、清晰状态、延迟、成本和失败恢复的工程主线没有改变。
 
@@ -17,38 +17,38 @@ Agent Runtime / AI 系统工程师<br>
 
 ### AI 初创公司｜Agent 研发工程师｜2025.11 至今
 
-- 从 0 到 1 建设并上线 Plan-and-Execute 与 ReAct 两套面向 C 端多模态创作业务的 Agent Runtime。
-- 设计并全量上线 Agent Memory，提升 Planner 对 LLM KV Cache 的利用率，并搭建 Trace、Replay、Metrics 与自动排障工具链。
+- 从 0 到 1 建设 Plan-and-Execute 与 ReAct 两套 Agent Runtime；初始开发完成后，其他同事开始接入协作。
+- 建设并全量上线 Agent Memory，提升 Planner 对 LLM KV Cache 的利用率，并搭建 Replay / Trace / Metrics 与自动排障工具链。
 
 ### 字节跳动｜用户画像平台后端工程师｜2022–2025
 
-- 从后端实习转为正式员工，后期核心负责数千万至近亿级 QPS 在线查询服务的容量、缓存、稳定性与可观测性治理。
-- 使用 Go 负责高并发低延迟在线查询服务，使用 Scala / Java 17 开发 CDP 业务与平台服务，并参与 Spark / Flink 数据任务；建设 CDP 权限体系、开放平台与跨区域数据链路，支持多租户授权、多语言 SDK 接入及亚太、北美和欧洲的多区域数据同步。
+- 使用 Go 开发并优化高并发低延迟在线查询服务；后期核心负责数千万至近亿级 QPS 生产系统的容量、缓存、稳定性与可观测性治理。
+- 使用 Scala / Java 17 开发 CDP 业务与平台服务，并以 Scala 参与 Spark / Flink 数据任务开发，覆盖在线导入与跨区域同步。
 
 ## 核心项目
 
-### 1. Plan-and-Execute Agent Runtime｜2026.03–2026.07
+### 1. Plan-and-Execute Agent Runtime｜2026.03–2026.07｜0→1 Owner
 
 面向多轮多模态创作中执行路径难以统一表达、生成过程无法安全打断，以及失败后难以续跑的问题，从 0 到 1 建设并全量上线完整执行底座：
 
-- 将生成过程建模为异步 Run 与执行图，统一 LLM Planner、Plan Validator、类型化 Capability I/O，支持多轮 replanning、并行汇聚和增量编辑；上线后成为生成中打断与修改、轮次级回退和断点恢复的执行底座。
-- 建设 PostgreSQL checkpoint、soft / hard cancel、跨集群 signal channel、CAS 与轮次级 rollback / resume，通过故障注入和恢复门禁验证业务状态能否安全恢复。
-- 建设事件总线、Prometheus Metrics 与结构化运行上下文；完成两轮 100 / 150-case 批量验证、生产 A/B 与全量发布。
+- 统一 LLM Planner、Plan Validator、typed capability I/O 与 step graph，支持异步 Run、多轮 replanning、fan-out / fan-in 和增量编辑；上线后成为生成中打断与修改、轮次级回退和断点恢复的执行底座。
+- 建设 PostgreSQL checkpoint、soft / hard cancel、跨集群 signal channel、CAS 与轮次级 rollback / resume；通过故障注入与恢复门禁区分“存在 checkpoint”和“业务状态可安全恢复”。
+- 建设事件总线、Prometheus metrics 与结构化运行上下文；完成 100 / 150-case 批量验证、生产 A/B 与全量发布。
 - 通过稳定 Planner Prompt 前缀提升 LLM Provider KV Cache 利用率；两周生产窗口内 hit rate 从 11.37% 提升至 54.79%，独立模型估算 planning LLM 成本占比下降约 31.2%。
 
-### 2. ReAct Runtime + Versioned Artifact System｜2026.08 至今
+### 2. ReAct Runtime + Versioned Artifact System｜2026.08 至今｜0→1 Owner
 
 面向开放创作任务难以预先固化流程、长任务在多实例运行中容易失去所有权，以及跨轮次产物难以追踪和选择的问题，从 0 到 1 建设并上线独立 ReAct Agent 服务与 Versioned Artifact System：
 
 - 基于前置架构调研选择 Pi AgentHarness、single-controller ReAct 与 Skill 软路线，不将创作主链固化为 Workflow；模型负责语义判断，Runtime 负责身份、状态、权限、副作用与恢复事实。
-- 为兼顾复杂 Tool 编排效率与动态判断，设计 grammar-constrained Code Mode，使模型通过单一执行入口在受限 JavaScript 环境中编排 typed nested tools；阶段内支持有界并发，阶段间重新读取事实并决策。
-- 为避免重绘、恢复和并发编辑依赖当前状态推断，建设版本化 Artifact 系统，以稳定身份、不可变版本、当前选择、归属和 lineage 管理多轮产物的来源、演进与最终集合。
-- 构建 capability-scoped Code Mode 与 Project-scoped 虚拟命令 Worker，通过受限命令、VFS、只读 Skill mount 与 staged write 控制路径、资源和副作用边界。
-- 围绕长任务与多实例执行建设单写语义、lease、heartbeat、drain、失败收敛和 query-before-retry，使系统能对运行归属与外部副作用进行判断。
+- 为兼顾复杂 Tool 编排效率与动态判断，设计 grammar-constrained Code Mode：模型通过单一 `exec` 在受限 JavaScript 环境中编排 typed nested tools，阶段内支持有界并发，阶段间回到 ReAct 重新读取事实并决策。
+- 为避免重绘、恢复和并发编辑依赖当前状态推断，建设版本化 Artifact 系统，以 stable identity、immutable Version、active selection、owner、lineage、Manifest、generation recipe 与 CAS 管理多轮产物的来源、选择和最终集合。
+- 为收窄模型可触达的命令、路径和资源，构建 capability-scoped Code Mode 与 Project-scoped 虚拟命令 Worker，基于 just-bash / VFS、只读 Skill mount 与 staged write 控制执行边界。
+- 针对长任务、多实例切换和部分外部副作用，建设 Thread 单写、跨 Thread 并发、lease / heartbeat / drain、owner-loss 失败收敛及 query-before-retry。
 
 ### 3. 用户画像在线高速查询服务｜字节跳动｜2022–2025
 
-- 使用 Go 开发并优化多租户用户画像在线查询服务，通过内存复用、固定 goroutine 池与 channel 控制并发；后期核心负责容量、缓存、监控、Oncall 与稳定性治理，生产规模达到数千万至近亿级 QPS。
+- 使用 Go 开发并优化高并发低延迟在线查询服务，通过内存复用、固定 goroutine 池与 channel 控制并发；后期核心负责容量、缓存、监控、Oncall 与稳定性治理。
 - 一组 2025 年生产峰值快照中，单条主路径达到约 6,583 万 QPS，P99 约 4.9–8.8 ms，并与其他区域和集群共同承载多区域查询流量。
 
 ### 4. 用户画像 CDP 平台建设｜字节跳动｜2023–2025
