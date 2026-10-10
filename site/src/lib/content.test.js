@@ -25,3 +25,31 @@ test("homepage does not include the old English intro sentence", () => {
 
   assert.doesNotMatch(homepage, /I build production-grade AI Agent systems/);
 });
+
+test("article images resolve to published assets on both deployment paths", () => {
+  const originalBasePath = process.env.BASE_PATH;
+
+  try {
+    for (const basePath of ["/", "/Lin-Guanguo/"]) {
+      process.env.BASE_PATH = basePath;
+      const article = content.getArticles().find(
+        (entry) => entry.slug === "ai-life-personal-records",
+      );
+      const imageSources = [...article.html.matchAll(/<img[^>]+src="([^"]+)"/g)]
+        .map((match) => match[1]);
+
+      assert.equal(imageSources.length, 3);
+      for (const source of imageSources) {
+        assert.ok(source.startsWith(`${basePath}source/202610/assets/`));
+        const relativeSource = source.slice(`${basePath}source/`.length);
+        assert.ok(fs.existsSync(`../essays/${relativeSource}`));
+      }
+    }
+  } finally {
+    if (originalBasePath === undefined) {
+      delete process.env.BASE_PATH;
+    } else {
+      process.env.BASE_PATH = originalBasePath;
+    }
+  }
+});

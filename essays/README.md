@@ -1,6 +1,6 @@
 # Essays
 
-Last Updated: 2026-09-02
+Last Updated: 2026-10-10
 
 Essays are grouped by writing or publishing month. File names use readable English slugs instead of internal draft names such as `blog.1`.
 
@@ -79,3 +79,7 @@ Historical essays may rely on the site's compatibility heuristics.
 ## 202609
 
 - [agent-sandbox-isolation-boundaries.md](202609/agent-sandbox-isolation-boundaries.md) — 从 just-bash 到 microVM：Agent 沙盒到底在隔离什么
+
+## 202610
+
+- [ai-life-personal-records.md](202610/ai-life-personal-records.md) — 看完孙割的访谈，我发现自己的生活已经 AI 化了

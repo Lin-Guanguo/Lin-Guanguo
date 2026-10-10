@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import { getDeploymentConfig } from "../config/deployment.js";
 
 const repoRoot = path.resolve(process.cwd(), "..");
 const essaysRoot = path.join(repoRoot, "essays");
@@ -101,7 +102,21 @@ function readArticle(month, filename) {
     month,
     monthLabel: monthLabel(month),
     sourcePath: `/source/${month}/${filename}`,
-    html: marked.parse(body),
+    html: marked.parse(body, {
+      walkTokens(token) {
+        if (
+          token.type === "image" &&
+          !/^(?:[a-z][a-z\d+.-]*:|\/|#)/i.test(token.href)
+        ) {
+          token.href = path.posix.join(
+            getDeploymentConfig().basePath,
+            "source",
+            month,
+            token.href,
+          );
+        }
+      },
+    }),
   };
 }
 
