@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
 ---
 
 <BaseLayout
-  description={article.subtitle || article.title}
+  description={article.description || article.subtitle || article.title}
   title={`${article.title} · Essays`}
 >
   <main class="reader-shell">

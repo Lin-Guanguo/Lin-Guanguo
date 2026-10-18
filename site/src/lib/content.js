@@ -92,12 +92,14 @@ function readArticle(month, filename) {
     parsed.data.title || firstHeading(parsed.content) || titleFromSlug(slug),
   );
   const subtitle = plainText(parsed.data.subtitle || firstSubtitle(parsed.content));
+  const description = plainText(parsed.data.description || "");
   const lastUpdated = normalizeDate(parsed.data.last_updated) || extractLastUpdated(raw);
 
   return {
     slug,
     title,
     subtitle,
+    description,
     lastUpdated,
     month,
     monthLabel: monthLabel(month),
