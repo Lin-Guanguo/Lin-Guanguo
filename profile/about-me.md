@@ -1,4 +1,4 @@
-Last Updated: 2026-09-21
+Last Updated: 2026-10-17
 
 # 林观果
 
@@ -70,7 +70,7 @@ Agent Runtime / AI 系统工程师<br>
 
 ## 写作与公开产出
 
-我持续记录 Agent 架构、Memory 与 Context、编程语言和生产工程实践，已公开 34 篇文章。近期代表作包括：
+我持续记录 Agent 架构、Memory 与 Context、编程语言和生产工程实践。近期代表作包括：
 
 - [《从模型调用到生产级 Agent：Vibe Coding 之外的工程实践》](../read/202607/production-agent-engineering-beyond-vibe-coding/)
 - [《主流 Agent 的 Tool 设计》](../read/202607/agent-tool-design-code-as-tool-use/)

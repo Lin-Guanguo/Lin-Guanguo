@@ -9,7 +9,7 @@ test("reads the public about page from the profile source", () => {
   const about = content.getAboutPage();
 
   assert.equal(about.title, "林观果");
-  assert.equal(about.lastUpdated, "2026-09-01");
+  assert.equal(about.lastUpdated, "2026-10-17");
   assert.match(about.summary[0], /^我是一名/);
   assert.match(about.summary.at(-1), /如何让边界重新变得清晰/);
   assert.doesNotMatch(about.summary.join("\n"), /负责 C 端创作生图 APP/);
