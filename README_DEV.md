@@ -79,10 +79,36 @@ Deployments use the domain root by default. GitHub Actions automatically derives
 
 Two optional environment variables are available when a deployment needs explicit URL settings:
 
-- `DOMAIN`: canonical domain used by Astro for SEO-oriented absolute URLs. The `https://` scheme is added when omitted.
+- `DOMAIN`: site origin used by Astro for absolute sitemap URLs. The `https://` scheme is added when omitted. Defaults to `https://lin-guanguo.github.io` in GitHub Actions and `https://me.linguanguo.top` elsewhere. Set any path prefix separately with `BASE_PATH`.
 - `BASE_PATH`: path prefix for a platform that serves the site below its domain root.
 
 Neither variable is required for the current GitHub Pages or EdgeOne Pages deployments. See `site/.env.example` for examples.
+
+### Sitemap and crawler access
+
+`@astrojs/sitemap` generates `sitemap-index.xml` and numbered sitemap files from the built HTML pages, including new essays automatically. URLs include the deployment origin and base path. Raw Markdown downloads and assets are not listed. Every page links to the sitemap in its HTML head; this adds no visible text.
+
+The generated `robots.txt` allows crawling and advertises the absolute sitemap URL. It does not guarantee indexing or override hosting-level bot protection. Check CDN access rules and real crawler logs separately if requests are blocked.
+
+- On EdgeOne, deploy at the domain root so `/robots.txt` is effective. The sitemap is `https://me.linguanguo.top/sitemap-index.xml`.
+- GitHub Pages publishes this project below `/Lin-Guanguo/`. Crawlers ignore `/Lin-Guanguo/robots.txt`; they only read `https://lin-guanguo.github.io/robots.txt`. Root-level rules must be managed by that host's root site, outside this repository. The project sitemap remains usable at `https://lin-guanguo.github.io/Lin-Guanguo/sitemap-index.xml` and can be submitted in Google Search Console or Bing Webmaster Tools after deployment.
+
+Validate both deployment variants before publishing:
+
+```bash
+cd site
+npm test
+npm run build
+GITHUB_ACTIONS=true GITHUB_REPOSITORY=Lin-Guanguo/Lin-Guanguo npm run build
+```
+
+Inspect `dist/robots.txt` and `dist/sitemap-*.xml` after each build. Sitemap entries should match the built HTML pages and use the expected host and base path. Do not add build-time `lastmod` values unless the corresponding content actually changed.
+
+### AI-readable site guide
+
+`src/pages/llms.txt.js` generates an AI-readable guide with a short introduction, resume links, and Markdown links for all essays. The essay list updates automatically at build time. `src/pages/about/index.md.js` publishes the existing `profile/about-me.md` unchanged at `/about/index.md`; its relative links retain the same base as the HTML resume.
+
+Every HTML page advertises the guide through a `rel="describedby"` link in its head, without adding visible content. The guide is published at `/llms.txt` on the custom domain and `/Lin-Guanguo/llms.txt` on GitHub Pages. Unlike robots.txt, the [llms.txt proposal](https://llmstxt.org/) supports subpath placement. It provides content guidance, not access control or a ranking guarantee; robots.txt continues to allow all crawlers.
 
 ## Ignore Rules
 

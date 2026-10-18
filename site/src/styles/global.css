@@ -293,6 +293,24 @@ h1 {
   line-height: 1.06;
 }
 
+.author-note {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.author-note p {
+  margin: 0 0 8px;
+}
+
+.author-note a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+
 .prose {
   padding-top: 28px;
   font-family:

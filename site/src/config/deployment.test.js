@@ -10,6 +10,7 @@ test("configures GitHub Pages from its built-in environment", () => {
 
   assert.equal(deployment.target, DeploymentTarget.GITHUB_PAGES);
   assert.equal(deployment.basePath, "/Lin-Guanguo");
+  assert.equal(deployment.siteUrl, "https://lin-guanguo.github.io");
   assert.equal(
     deployment.cloudflareAnalyticsToken,
     "8fb2bd9bf84c4eb2a002497861faf5ea",
@@ -22,6 +23,7 @@ test("configures EdgeOne for builds outside GitHub Actions", () => {
 
   assert.equal(deployment.target, DeploymentTarget.EDGEONE);
   assert.equal(deployment.basePath, "/");
+  assert.equal(deployment.siteUrl, "https://me.linguanguo.top");
   assert.equal(
     deployment.cloudflareAnalyticsToken,
     "5c4eadc85c184547a8923cef932b3704",

@@ -20,7 +20,17 @@ const deployment = getDeploymentConfig();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      href={new URL(`${base}sitemap-index.xml`, Astro.site)}
+    />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <link
+      rel="describedby"
+      type="text/plain"
+      href={new URL(`${base}llms.txt`, Astro.site)}
+    />
     {
       deployment.cloudflareAnalyticsToken && (
         <script

@@ -5,9 +5,11 @@ export const DeploymentTarget = Object.freeze({
 
 const deployments = Object.freeze({
   [DeploymentTarget.GITHUB_PAGES]: Object.freeze({
+    siteUrl: "https://lin-guanguo.github.io",
     cloudflareAnalyticsToken: "8fb2bd9bf84c4eb2a002497861faf5ea",
   }),
   [DeploymentTarget.EDGEONE]: Object.freeze({
+    siteUrl: "https://me.linguanguo.top",
     cloudflareAnalyticsToken: "5c4eadc85c184547a8923cef932b3704",
     icpFiling: Object.freeze({
       number: "闽ICP备2026034120号-1",

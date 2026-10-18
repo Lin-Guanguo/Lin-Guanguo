@@ -49,6 +49,18 @@ const base = import.meta.env.BASE_URL.endsWith("/")
       </header>
 
       <div class="prose" set:html={article.html} />
+
+      <footer class="author-note" aria-label="关于作者">
+        <p><strong>关于作者 · 林观果 / Lin Guanguo</strong></p>
+        <p>
+          我在上海从事 Agent Runtime 与后端系统研发，关注智能体运行时、工具设计、记忆与上下文，以及生产系统的可靠性。
+        </p>
+        <p>
+          <a href={`${base}about/`}>关于我</a>
+          <span aria-hidden="true"> · </span>
+          <a href="mailto:lin.guanguo2000@gmail.com">交流与联系</a>
+        </p>
+      </footer>
     </article>
   </main>
 </BaseLayout>
