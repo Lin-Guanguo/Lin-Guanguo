@@ -1,6 +1,6 @@
 # Essays
 
-Last Updated: 2026-10-17
+Last Updated: 2026-11-18
 
 Essays are grouped by writing or publishing month. File names use readable English slugs instead of internal draft names such as `blog.1`.
 
@@ -84,3 +84,7 @@ Historical essays may rely on the site's compatibility heuristics.
 
 - [resume-discovered-by-ai.md](202610/resume-discovered-by-ai.md) — 我的简历，好像被 GPT 看上了
 - [ai-life-personal-records.md](202610/ai-life-personal-records.md) — 看完孙割的访谈，我发现自己的生活已经 AI 化了
+
+## 202611
+
+- [lifelog-timestamped-notes-ai-review.md](202611/lifelog-timestamped-notes-ai-review.md) — 为了算清组间休息，我让 AI 写了个 App
