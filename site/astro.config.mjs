@@ -12,6 +12,13 @@ export default defineConfig({
       : `https://${domain}`
     : deployment.siteUrl,
   base: deployment.basePath,
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      serialize: (item) => ({
+        ...item,
+        url: item.url.replace(/(\/read\/\d{6}\/[^/]+)\/?$/, "$1/index.html"),
+      }),
+    }),
+  ],
   output: "static",
 });

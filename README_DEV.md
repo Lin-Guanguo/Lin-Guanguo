@@ -84,6 +84,12 @@ Two optional environment variables are available when a deployment needs explici
 
 Neither variable is required for the current GitHub Pages or EdgeOne Pages deployments. See `site/.env.example` for examples.
 
+### Article routing
+
+Article links, including sitemap entries, use `/read/YYYYMM/slug/index.html` so they resolve to an actual build output file without relying on a host's directory-index behavior.
+
+After deploying link changes, check article URLs on the production custom domain. Successful navigation in a local Astro preview or an EdgeOne deployment preview does not verify routing on the custom domain.
+
 ### Sitemap and crawler access
 
 `@astrojs/sitemap` generates `sitemap-index.xml` and numbered sitemap files from the built HTML pages, including new essays automatically. URLs include the deployment origin and base path. Raw Markdown downloads and assets are not listed. Every page links to the sitemap in its HTML head; this adds no visible text.
